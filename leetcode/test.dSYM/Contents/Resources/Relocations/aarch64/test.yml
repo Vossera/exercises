@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/sihan/Developer/exercises/leetcode/test'
+relocations:     []
+...
