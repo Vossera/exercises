@@ -16,30 +16,24 @@ using namespace std;
 int main() {
     string a;
     getline(cin, a, '\n');
-    int start = 0;
-    int length = 0;
-    vector<string> results;
-    for (int i = 0; i < a.length(); i++)
+    smatch results;
+    regex pattern("[a-zA-Z]+");
+
+    string::const_iterator searchIter(a.cbegin());
+    
+    vector<string> res;
+    while (regex_search(searchIter, a.cend(), results, pattern))
     {
-        if (isalpha(a[i]))
-        {
-            length++;
-        }else {
-            if (length > 0)
-            {
-                string temp = a.substr(start, length);
-                results.push_back(temp);
-                length = 0;
-            }
-            start = i + 1;
-        }
+        // cout << (searchIter == a.cbegin() ? "" : " ") << results[0];
+        res.push_back(results[0]);
+        searchIter = results.suffix().first;
     }
-    string temp = a.substr(start, length);
-    results.push_back(temp);
-    for (int i = results.size() - 1; i >= 0 ; i--)
+    for (int i = res.size() - 1; i >= 0; i--)
     {
-        cout << results[i] << ' ';
+        cout << res[i] << ' ';
     }
+    
+    
     
     
 }

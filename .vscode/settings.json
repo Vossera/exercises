@@ -4,6 +4,12 @@
         "vector": "cpp",
         "istream": "cpp",
         "string": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "__hash_table": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "map": "cpp",
+        "string_view": "cpp",
+        "unordered_map": "cpp"
     }
 }
